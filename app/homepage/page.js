@@ -23,7 +23,7 @@ function SearchGifs() {
     else{
       getLikedGifs()
     }
-  })
+  },[])
   useEffect(() => {
     if (keyword) {
       fetchGifs();
@@ -66,7 +66,7 @@ function SearchGifs() {
 
   return (
     <div className='w-[100%]  max-h-max bg-white rounded-xl'>
-      <button onClick={getLikedGifs}>dkflds</button>
+      
     <div className=" w-full p-4 flex rounded-lg">
     <Search color='white ' size={40} className='p-1' strokeWidth={3} />
     <input 
@@ -91,7 +91,7 @@ placeholder='Enter Keyword'
             className=''
        
           >
-            {LikedArr.includes(gif.id) ? <Heart/> : <HeartOffIcon/>}</button></div>
+            {LikedArr.includes(gif.id) ? <HeartOffIcon/>: <Heart/>}</button></div>
       </div>
       
        

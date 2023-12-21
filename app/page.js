@@ -14,13 +14,13 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
  
-  const SignUp = async (e) => {
+  const Register= async (e) => {
+    // e.preventDefault();
     if(password.length <= 6){
-      alert("password must be more than 6 digits")
+      alert("password must contain more than 6 digits")
 
       return
     }
-    e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password).then((data) => {
         alert("Signed in", data);
@@ -33,7 +33,7 @@ export default function SignUp() {
       alert(error);
     }
   };
-  const SignIp = async (e) => {
+  const SignIn = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password).then((data) => {
@@ -53,7 +53,7 @@ export default function SignUp() {
       <div className="min-h-screen w-[50%] m-auto  items-center justify-center  ">
         <div className=" border-8 ">
           <div className="py-10">
-            <form
+            <div
               className=" py-16 p-8 rounded-lg text-xl "
               
             >
@@ -93,23 +93,23 @@ export default function SignUp() {
                 />
               </div>
               <div className="flex flex-auto  text-end justify-between">
-                <button onClick={SignUp} className="bg-blue-900 select-none hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded">
+                <button onClick={SignIn} className="bg-blue-900 select-none hover:bg-blue-700 text-white text-xl font-bold py-2 px-4 rounded">
                   Login
                 </button>
                 <span>
-                  <h2
+                  <button
                    
                     className="px-3 select-none cursor-pointer text-2xl align-text-bottom font-mono
                      text-gray-200 border-gray-200 bg-black border-2 hover:bg-gray-300
                       hover:text-black" onClick={()=>{
-
+                        Register()
                       }}
                   >
                     SignUp
-                  </h2>
+                  </button>
                 </span>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
