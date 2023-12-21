@@ -1,27 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* .contain{ */
+  /* margin: auto;
+  width: 50%;
+  height: 25%;
+  border: 3px solid green;
+  padding: 10px;
+} */
+body{
+  background-color: gray;
+ background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin: auto;
+ padding: 3rem;
+ 
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.card{
+  display: grid;
+  grid-template-rows: max-content 200px 1fr;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  /* grid-gap: 20px; */
 }
